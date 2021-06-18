@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Warehouse Inventory App</string>
+
+    <string name="item_name">Item Name:</string>
+    <string name="quantity">Quantity:</string>
+    <string name="cost">Cost:</string>
+    <string name="description">Description:</string>
+    <string name="frozen_item">Frozen Item:</string>
+
+    <string name="quantity_default">0</string>
+    <string name="cost_default">0.0</string>
+
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+
+    <string name="delete">Delete</string>
+    <string name="add_new_item">Add Items</string>
+    <string name="item_added">New item (%s) has been added</string>
+    <string name="clear_all_items">Clear All Items</string>
+    <string name="list_all_items">List All Items</string>
+
+    <string name="shared_preference_key">PRIVATE_SHARED_PREFERENCE</string>
+
+    <string name="navigation_drawer_open">Navigation Opened</string>
+    <string name="navigation_drawer_close">Navigation Closed</string>
+</resources>

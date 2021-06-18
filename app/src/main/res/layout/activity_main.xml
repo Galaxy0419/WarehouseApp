@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/coord_layout_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/activity_main_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/activity_main_conlayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?android:attr/actionBarSize"
+                android:paddingBottom="?android:attr/actionBarSize"
+                tools:context=".MainActivity">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_left_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.05" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/gl_right_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.95" />
+
+                <TextView
+                    android:id="@+id/tv_item_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/item_name"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/gl_left_margin"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/et_item_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textShortMessage"
+                    app:layout_constraintEnd_toStartOf="@+id/gl_right_margin"
+                    app:layout_constraintStart_toStartOf="@+id/gl_left_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_item_name" />
+
+                <TextView
+                    android:id="@+id/tv_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/quantity"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/gl_left_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/et_item_name" />
+
+                <EditText
+                    android:id="@+id/et_quantity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="@string/quantity_default"
+                    app:layout_constraintEnd_toStartOf="@+id/gl_right_margin"
+                    app:layout_constraintStart_toStartOf="@+id/gl_left_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_quantity" />
+
+                <TextView
+                    android:id="@+id/tv_cost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/cost"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/gl_left_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/et_quantity" />
+
+                <EditText
+                    android:id="@+id/et_cost"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:text="@string/cost_default"
+                    app:layout_constraintEnd_toStartOf="@+id/gl_right_margin"
+                    app:layout_constraintStart_toStartOf="@+id/gl_left_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_cost" />
+
+                <TextView
+                    android:id="@+id/tv_decription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/description"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/gl_left_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/et_cost" />
+
+                <EditText
+                    android:id="@+id/et_description"
+                    android:layout_width="0dp"
+                    android:layout_height="128dp"
+                    android:layout_marginBottom="32dp"
+                    android:ems="10"
+                    android:gravity="top|left"
+                    android:inputType="textMultiLine"
+                    android:textAlignment="gravity"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_frozen_item"
+                    app:layout_constraintEnd_toStartOf="@+id/gl_right_margin"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/gl_left_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_decription"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/tv_frozen_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="@string/frozen_item"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/tb_frozen_item"
+                    app:layout_constraintStart_toStartOf="@+id/gl_left_margin" />
+
+                <ToggleButton
+                    android:id="@+id/tb_frozen_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:onClick="toggleFrozen"
+                    android:textOff="@string/no"
+                    android:textOn="@string/yes"
+                    app:layout_constraintBottom_toTopOf="@+id/bt_add_new_item"
+                    app:layout_constraintStart_toStartOf="@+id/gl_left_margin" />
+
+                <Button
+                    android:id="@+id/bt_add_new_item"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:onClick="addItem"
+                    android:text="@string/add_new_item"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/bt_clear_all_items"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/bt_clear_all_items"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:onClick="clearItems"
+                    android:text="@string/clear_all_items"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/bt_add_new_item" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="100dp"
+            android:onClick="addItem"
+            app:srcCompat="@drawable/ic_add_circle_24dp" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/nav_menu" />
+</androidx.drawerlayout.widget.DrawerLayout>
